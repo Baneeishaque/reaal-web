@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Login Details</h2>
+        <table class="table">
+            <thead>
+                <tr>
+<!--                    <th>Mobile Number</th>-->
+                    <th>User Name</th>
+<!--                    <th>Member ID</th>-->
+                    <th>Left Customer</th>
+                    <th>Right Customer</th>
+                    <th>Amount</th>
+<!--                    <th>Income</th>-->
+<!--                    <th>Rebirth</th>-->
+<!--                    <th>Count</th>-->
+<!--                    <th>SI No</th>-->
+<!--                    <th>Formatted Date</th>-->
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.user_name}}</td>
+<!--                        <td>{{ user.mobile_number }}</td>-->
+<!--                        <td>{{ user.member_id }}</td>-->
+                        <td>{{ user.left_customer }}</td>
+                        <td>{{ user.right_customer }}</td>
+                        <td>{{ user.amount }}</td>
+<!--                        <td>{{ user.income }}</td>-->
+<!--                        <td>{{ user.rebirth }}</td>-->
+<!--                        <td>{{ user.count }}</td>-->
+<!--                        <td>{{ user.si_no }}</td>-->
+<!--                        <td>{{ user.formatted_date }}</td>-->
+<!--                    </tr>-->
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
