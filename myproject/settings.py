@@ -119,14 +119,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # settings.py
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',  # Default backend
-    'myapp.backends.PhoneNumberBackend',  # Your custom backend
-)
+# AUTHENTICATION_BACKENDS = (
+#     'django.contrib.auth.backends.ModelBackend',  # Default backend
+#     'myapp.backends.PhoneNumberBackend',  # Your custom backend
+# )
 
 # AUTH_USER_MODEL = 'myapp.CustomUser'  # If you extended the default User model

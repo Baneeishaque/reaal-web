@@ -10,39 +10,60 @@
     <div class="container">
         <h2 class="mt-5">Login Details</h2>
         <table class="table">
+            {% csrf_token %}
             <thead>
                 <tr>
-<!--                    <th>Mobile Number</th>-->
+                    <th>SI Number</th>
+                    <th>Count</th>
+                    <th>Member ID</th>
                     <th>User Name</th>
-<!--                    <th>Member ID</th>-->
                     <th>Left Customer</th>
                     <th>Right Customer</th>
                     <th>Amount</th>
-<!--                    <th>Income</th>-->
-<!--                    <th>Rebirth</th>-->
-<!--                    <th>Count</th>-->
-<!--                    <th>SI No</th>-->
-<!--                    <th>Formatted Date</th>-->
+                    <th>Rebirth</th>
+
+<!--                 <th>Formatted Date</th>&ndash;&gt;-->
                 </tr>
             </thead>
             <tbody>
+<!--            <form method="post">-->
+<!--                {% csrf_token %}-->
+<!--            {{ form.as_table }}-->
                 {% for user in users %}
                     <tr>
-                        <td>{{ user.user_name}}</td>
-<!--                        <td>{{ user.mobile_number }}</td>-->
-<!--                        <td>{{ user.member_id }}</td>-->
+<!--                        <td>{{ forloop.counter }}</td>-->
+                        <td>{{ user.si_number }}</td>
+                        <td>{{ user.count }}</td>
+                        <td>{{ user.member_id }}</td>
+                        <td>{{ user.user.username}}</td>
                         <td>{{ user.left_customer }}</td>
                         <td>{{ user.right_customer }}</td>
                         <td>{{ user.amount }}</td>
 <!--                        <td>{{ user.income }}</td>-->
-<!--                        <td>{{ user.rebirth }}</td>-->
-<!--                        <td>{{ user.count }}</td>-->
-<!--                        <td>{{ user.si_no }}</td>-->
+                        <td>{{ user.rebirth }}</td>
+
+
 <!--                        <td>{{ user.formatted_date }}</td>-->
-<!--                    </tr>-->
+                    </tr>
+
+                {% empty %}
+                    <tr>
+                        <td colspan="4">No users found</td>
+                    </tr>
                 {% endfor %}
+            </form>
             </tbody>
         </table>
+<!--      new section  -->
+        <h2 class="mt-5">Add New Entry</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
     </div>
 </body>
 </html>
+
